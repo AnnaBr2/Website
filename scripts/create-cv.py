@@ -27,7 +27,7 @@ def item(title, details):
     story.append(KeepTogether([p(title, 'item'), p(details, 'detail')]))
 
 story += [p('Anna Brabec', 'name'), p('Master of Arts in Business<br/>Digital Marketing und Kommunikation', 'tagline')]
-story += [p('<link href="mailto:contact@annabrabec.com">contact@annabrabec.com</link>  |  <link href="https://annabrabec.com/">annabrabec.com</link><br/><link href="https://www.linkedin.com/in/anna-maria-brabec-752b92246/">LinkedIn: Anna Maria Brabec</link>', 'contact'), HRFlowable(width='100%', thickness=1, color=GREEN), Spacer(1,10)]
+story += [p('<link href="mailto:brabecanna22@gmail.com">brabecanna22@gmail.com</link>  |  <link href="https://annabrabec.com/">annabrabec.com</link><br/><link href="https://www.linkedin.com/in/anna-maria-brabec-752b92246/">LinkedIn: Anna Maria Brabec</link>', 'contact'), HRFlowable(width='100%', thickness=1, color=GREEN), Spacer(1,10)]
 story.append(p('Digital Marketing und Eventmanagement sind meine beruflichen Zielbereiche. Bei Cotton Classics arbeite ich als Marketing Allrounderin und im Projektmanagement und übernehme die Planung, Organisation und Durchführung der Roadshow. Mein Portfolio ergänzt diese Praxis um Studienprojekte in Markenentwicklung und Marketingforschung.'))
 section('BERUFLICHE ERFAHRUNG')
 item('Marketing Allrounderin & Projektmanagement | Cotton Classics Handels GmbH', 'Seit 08/2024 · Teilzeit · Schwadorf, Niederösterreich<br/>- Projektmanagement und Eventorganisation; Planung, Organisation und Durchführung der Roadshow<br/>- Mailings, Newsletter und Websitebetreuung<br/>- Content- und Giveaway-Management<br/>- KPI-Monitoring und Optimierung')

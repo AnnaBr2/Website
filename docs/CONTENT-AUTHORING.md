@@ -91,7 +91,7 @@ npm.cmd run css
 
 ## Contact and career information
 
-The email button uses `params.email` in `hugo.toml`, currently `contact@annabrabec.com`. This is a mail link; mailbox provisioning is handled by the domain's email provider.
+The email button uses `params.email` in `hugo.toml`, currently `brabecanna22@gmail.com`. This is a mail link that opens the visitor's email application.
 
 The hero contains the Contact and Work actions without an additional email/copy row. The email address remains available in the contact section and inner-page footers. The homepage profile links to the About page, which contains the full career and education section.
 

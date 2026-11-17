@@ -268,4 +268,4 @@ Resolve-DnsName annabrabec.com -Type A
 Resolve-DnsName www.annabrabec.com -Type CNAME
 ```
 
-Finally check **https://annabrabec.com/**, the About page, project links and styling. **https://www.annabrabec.com/** should redirect to the main domain. The contact button opens email; GitHub Pages does not create a mailbox, so separately confirm that `contact@annabrabec.com` receives mail at its configured forwarding destination.
+Finally check **https://annabrabec.com/**, the About page, project links and styling. **https://www.annabrabec.com/** should redirect to the main domain. The contact button opens an email to `brabecanna22@gmail.com`; no domain mailbox or email forwarding is required for this contact address.
