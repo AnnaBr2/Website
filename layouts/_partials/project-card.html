@@ -1,0 +1,9 @@
+<article class="anna-project-card">
+  <a class="anna-card-link" href="{{ .RelPermalink }}">
+    <div class="anna-project-cover">{{ with .Params.cover }}<img src="{{ . | relURL }}" alt="{{ $.Params.cover_alt }}" width="720" height="450" loading="lazy">{{ else }}<span>{{ .Params.category }}</span>{{ end }}</div>
+    <div class="anna-card-meta"><span>{{ .Params.category }}</span><span>{{ if .Draft }}Entwurf{{ else }}{{ .Params.project_type }} · {{ .Params.timeframe }}{{ end }}</span></div>
+    <h3>{{ .Params.short_title | default .Title }} <span aria-hidden="true">↗</span></h3>
+    <p>{{ .Description }}</p>
+    {{ with .Params.deliverable }}<p class="anna-card-result">{{ . }}</p>{{ end }}
+  </a>
+</article>

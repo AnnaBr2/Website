@@ -1,0 +1,10 @@
+{{ with .Page.Params.result_comparison }}
+<figure class="anna-result-comparison">
+  <div class="anna-table-scroll"><table>
+    <caption>{{ .title }}</caption>
+    <thead><tr><th scope="col">Anzeige</th><th scope="col" aria-label="Anzahl der Teilnehmenden">Anzahl</th><th scope="col">Mittelwert</th></tr></thead>
+    <tbody>{{ range .rows }}<tr><th scope="row">{{ .label }}</th><td>{{ .n }}</td><td>{{ .mean }}</td></tr>{{ end }}</tbody>
+  </table></div>
+  <figcaption>{{ .note }}</figcaption>
+</figure>
+{{ end }}

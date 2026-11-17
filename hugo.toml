@@ -1,0 +1,13 @@
+baseURL = 'https://annabrabec.com/'
+locale = 'de-AT'
+defaultContentLanguage = 'de'
+title = 'Anna Brabec'
+theme = 'roxo-hugo'
+timeZone = 'Europe/Vienna'
+enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term', 'RSS']
+
+[params]
+  description = 'Anna Brabec – Portfolio und Blog zu Digital Marketing, Markenstrategie und Kommunikation. Master of Arts in Business.'
+  linkedin = 'https://www.linkedin.com/in/anna-maria-brabec-752b92246/'
+  email = 'contact@annabrabec.com'

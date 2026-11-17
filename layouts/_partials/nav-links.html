@@ -1,0 +1,4 @@
+<a class="nav-link" href="{{ "projekte/" | relURL }}"{{ if eq .Section "projekte" }} aria-current="page"{{ end }}>Projekte</a>
+<a class="nav-link" href="{{ "blog/" | relURL }}"{{ if eq .Section "blog" }} aria-current="page"{{ end }}>Blog</a>
+<a class="nav-link" href="{{ "about/" | relURL }}"{{ if eq .Layout "about" }} aria-current="page"{{ end }}>Über mich</a>
+<a class="nav-link" href="{{ site.Home.RelPermalink }}#kontakt">Kontakt</a>

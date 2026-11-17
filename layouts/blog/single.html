@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article class="anna-blog-page">
+  <header class="anna-article-header anna-reading-width">
+    <a class="anna-back-link" href="{{ "blog/" | relURL }}">← Blog</a>
+    <p class="anna-eyebrow">{{ .Params.category }}</p><h1>{{ .Title }}</h1><p class="anna-page-lead">{{ .Description }}</p>
+    <div class="anna-article-meta"><span>{{ if .Draft }}Artikelentwurf{{ else }}{{ .Params.author | default site.Title }}{{ end }}</span><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time><span>{{ .ReadingTime }} Min. Lesezeit</span></div>
+    {{ if .Draft }}<p class="anna-draft-note">Redaktioneller Entwurf zur Durchsicht.</p>{{ end }}
+  </header>
+  <div class="{{ if .Params.toc }}anna-reading-layout container{{ else }}anna-reading-width anna-blog-body{{ end }}">
+    {{ if .Params.toc }}<aside class="anna-toc" aria-label="Inhalt"><p>In diesem Beitrag</p>{{ .TableOfContents }}</aside>{{ end }}
+    <div class="anna-prose">{{ .Content }}</div>
+  </div>
+  {{ with .Params.project }}{{ with site.GetPage . }}<aside class="anna-reading-width anna-related-project"><p>Das Projekt dazu</p><a class="anna-inline-link" href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">↗</span></a></aside>{{ end }}{{ end }}
+  {{ with .Params.source }}<div class="anna-reading-width anna-source-note">{{ . }}</div>{{ end }}
+  {{ $otherPosts := where (where site.RegularPages "Section" "blog") "RelPermalink" "ne" .RelPermalink }}
+  {{ with $otherPosts }}<section class="anna-section container anna-more-posts"><div class="anna-section-heading"><h2>Weiterlesen</h2></div><div class="anna-article-list">{{ range first 2 . }}{{ partial "article-card.html" . }}{{ end }}</div></section>{{ end }}
+</article>
+{{ end }}

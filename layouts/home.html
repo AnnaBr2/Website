@@ -1,0 +1,40 @@
+{{ define "main" }}
+{{ $projects := (where site.RegularPages "Section" "projekte").ByWeight }}
+{{ $posts := (where site.RegularPages "Section" "blog").ByDate.Reverse }}
+{{ with .Params.banner }}
+<section class="anna-hero">
+  <div class="container anna-hero-inner">
+    <div class="anna-hero-identity">
+      <div class="anna-name-space"><h1 class="anna-hero-name" aria-label="{{ .title }}"><a class="anna-moving-name" href="#main" aria-label="{{ .title }} – nach oben"><span aria-hidden="true">{{ .first_name }}</span> <span aria-hidden="true">{{ .last_name }}</span></a></h1></div>
+      <p class="anna-hero-subtitle">{{ range split .content " · " }}<span>{{ . }}</span>{{ end }}</p>
+    </div>
+    <div class="anna-hero-intro"><p>{{ .intro }}</p></div>
+    <div class="anna-hero-buttons">
+      <a class="btn btn-primary" href="mailto:{{ site.Params.email }}">Kontakt aufnehmen <span aria-hidden="true">↗</span></a>
+      <a class="btn btn-secondary" href="#projekte">Arbeiten ansehen <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+</section>
+{{ end }}
+<section id="projekte" class="anna-section anna-selected-work">
+  <div class="container">
+    <div class="anna-section-heading"><h2>Ausgewählte Arbeiten</h2>{{ if gt (len $projects) 3 }}<a class="anna-inline-link" href="{{ "projekte/" | relURL }}">Alle Projekte <span aria-hidden="true">↗</span></a>{{ end }}</div>
+    <div class="anna-project-grid anna-work-preview">
+      {{ range first 3 $projects }}{{ partial "project-card.html" . }}{{ else }}<p class="anna-empty">Meine Projekte folgen hier.</p>{{ end }}
+    </div>
+  </div>
+</section>
+<section id="profil" class="anna-section anna-profile anna-section-divider">
+  <div class="container anna-profile-grid">
+    <h2>Über mich</h2>
+    <div class="anna-profile-copy"><p>Seit August 2024 arbeite ich als Marketing Allrounderin und im Projektmanagement bei Cotton Classics in Schwadorf. Zu meinem Aufgabenbereich gehören vielfältige Marketingaktivitäten, Digital Marketing sowie die Planung, Organisation und Durchführung der Roadshow.</p><div class="anna-profile-actions"><a class="anna-inline-link" href="{{ "about/" | relURL }}">Mehr über mich <span aria-hidden="true">↗</span></a></div></div>
+  </div>
+</section>
+<section id="blog" class="anna-section anna-section-divider">
+  <div class="container">
+    <div class="anna-section-heading"><h2>Notizen aus meinen Projekten</h2>{{ if gt (len $posts) 2 }}<a class="anna-inline-link" href="{{ "blog/" | relURL }}">Alle Beiträge <span aria-hidden="true">↗</span></a>{{ end }}</div>
+    <div class="anna-article-list">{{ range first 2 $posts }}{{ partial "article-card.html" . }}{{ else }}<p class="anna-empty">Hier erscheinen bald die ersten Beiträge.</p>{{ end }}</div>
+  </div>
+</section>
+{{ partial "call-to-action.html" . }}
+{{ end }}

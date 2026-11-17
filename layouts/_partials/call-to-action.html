@@ -1,0 +1,10 @@
+<section id="kontakt" class="anna-section anna-contact anna-section-divider">
+  <div class="container text-center">
+    <h2>Let's talk</h2>
+    <p>Ich freue mich über Ihre Nachricht.</p>
+    <div class="anna-contact-actions">
+      {{ with site.Params.email }}<a class="btn btn-primary" href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+      <a class="anna-inline-link" href="{{ site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>

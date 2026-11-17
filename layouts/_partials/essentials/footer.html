@@ -1,0 +1,7 @@
+<footer class="anna-footer">
+  <div class="container anna-footer-inner">
+    <a href="{{ if .IsHome }}#main{{ else }}{{ site.Home.RelPermalink }}{{ end }}">{{ if .IsHome }}Nach oben ↑{{ else }}Zur Startseite{{ end }}</a>
+    {{ if not .IsHome }}{{ with site.Params.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}{{ end }}
+    <small>© {{ now.Year }} annabrabec.com</small>
+  </div>
+</footer>

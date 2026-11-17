@@ -1,0 +1,4 @@
+{{ define "main" }}
+<header class="anna-about-header container"><h1>Hallo, ich bin Anna.</h1><div class="anna-about-grid"><div><div class="anna-prose">{{ .Content }}</div></div><aside class="anna-about-work"><h2>Aus meinem Studium</h2><a href="{{ "projekte/anima/" | relURL }}"><span>Gestalten</span><strong>Eine Markenidee sichtbar machen.</strong><span>Anima – Corporate Design <span aria-hidden="true">↗</span></span></a><a href="{{ "projekte/masterarbeit-markenimage/" | relURL }}"><span>Untersuchen</span><strong>Die Wirkung von Kommunikation prüfen.</strong><span>Meine Masterarbeit <span aria-hidden="true">↗</span></span></a></aside></div></header>
+{{ partial "profile.html" . }}
+{{ end }}

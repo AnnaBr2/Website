@@ -1,0 +1,12 @@
+/public/
+/resources/_gen/
+/.hugo_build.lock
+/.hugo_cache/
+/.tools/
+/.qa/
+/.DS_Store
+/Thumbs.db
+/node_modules/
+/assets/css/compiled.css
+/static/fonts/
+/output/

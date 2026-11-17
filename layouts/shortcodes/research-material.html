@@ -1,0 +1,11 @@
+{{ with .Page.Params.research_material }}
+<div class="anna-research-material">
+  <p class="anna-material-context">{{ $.Page.Params.material_note }}</p>
+  <div class="anna-stimulus-grid">
+    {{ range . }}<figure>
+      <a class="anna-stimulus-image" href="{{ .src | relURL }}" target="_blank" rel="noopener" aria-label="{{ .title }} in Originalgröße öffnen"><img src="{{ .src | relURL }}" alt="{{ .alt }}" width="{{ .width }}" height="{{ .height }}" loading="lazy"></a>
+      <figcaption><strong>{{ .title }}</strong><p>{{ .caption }}</p><a class="anna-inline-link" href="{{ .src | relURL }}" target="_blank" rel="noopener">Originalgröße <span aria-hidden="true">↗</span></a></figcaption>
+    </figure>{{ end }}
+  </div>
+</div>
+{{ end }}

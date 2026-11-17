@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "tailwind-bootstrap-grid";
+@source "../../layouts";
+@source "../../themes/roxo-hugo/layouts";
+@import "../../themes/roxo-hugo/assets/css/generated-theme.css";
+@import "../../themes/roxo-hugo/assets/css/safe.css";
+@import "../../themes/roxo-hugo/assets/css/utilities.css";
+@layer base { @import "../../themes/roxo-hugo/assets/css/base.css"; }
+@layer components {
+  @import "../../themes/roxo-hugo/assets/css/components.css";
+  @import "../../themes/roxo-hugo/assets/css/navigation.css";
+  @import "../../themes/roxo-hugo/assets/css/buttons.css";
+}
+@import "./custom.css";

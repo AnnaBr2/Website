@@ -1,0 +1,4 @@
+<figure class="anna-project-figure{{ if .wide }} anna-gallery-wide{{ end }}">
+  <div class="anna-figure-image{{ if .logo }} anna-logo-frame{{ end }}"><img src="{{ .src | relURL }}" alt="{{ .alt }}" width="{{ .width | default 1600 }}" height="{{ .height | default 900 }}" loading="lazy"></div>
+  <figcaption>{{ with .title }}<strong>{{ . }}</strong>{{ end }}{{ .caption }}</figcaption>
+</figure>

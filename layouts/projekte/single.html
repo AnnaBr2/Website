@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="anna-case-page{{ if .Params.feature }} anna-visual-project{{ end }}">
+  <header class="anna-article-header {{ if .Params.feature }}container{{ else }}anna-reading-width{{ end }}">
+    <a class="anna-back-link" href="{{ "projekte/" | relURL }}">← Projekte</a>
+    <p class="anna-eyebrow">{{ .Params.project_type }} · {{ .Params.timeframe }}</p>
+    <h1>{{ .Title }}</h1><p class="anna-page-lead">{{ .Description }}</p>
+    {{ if .Draft }}<p class="anna-draft-note">Entwurf · Diese Projektbeschreibung wird noch bearbeitet.</p>{{ end }}
+    <dl class="anna-project-facts"><div><dt>Meine Aufgabe</dt><dd>{{ .Params.role }}</dd></div><div><dt>Arbeitsweise</dt><dd>{{ delimit .Params.tools ", " }}</dd></div>{{ with .Params.presentation_tool }}<div><dt>Projektpräsentation</dt><dd>{{ . }}</dd></div>{{ end }}</dl>
+  </header>
+  {{ with .Params.feature }}<figure class="container anna-feature-figure"><img src="{{ .src | relURL }}" alt="{{ .alt }}" width="{{ .width }}" height="{{ .height }}" fetchpriority="high">{{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>{{ end }}
+  {{ if .Params.feature }}
+    <section class="container anna-project-introduction"><h2>{{ .Params.intro_heading | default "Die Idee" }}</h2><div class="anna-prose">{{ .Content }}</div></section>
+    {{ with .Params.process }}<section class="container anna-project-stage"><h2>{{ $.Params.process_heading | default "Die Entwicklung" }}</h2><div class="anna-project-gallery anna-process-gallery">{{ range . }}{{ partial "project-figure.html" . }}{{ end }}</div></section>{{ end }}
+    {{ with .Params.palette }}<section class="container anna-design-system"><div><h2>Die Farbwelt</h2>{{ with $.Params.palette_intro }}<p>{{ . }}</p>{{ end }}</div><dl class="anna-palette">{{ range . }}<div><span class="anna-swatch" style="background-color: {{ .hex }};" aria-hidden="true"></span><dt>{{ .name }}</dt><dd>{{ .hex }}</dd></div>{{ end }}</dl></section>{{ end }}
+    {{ with .Params.gallery }}<section class="container anna-project-stage"><h2>{{ $.Params.gallery_heading | default "Die Anwendungen" }}</h2><div class="anna-project-gallery">{{ range . }}{{ partial "project-figure.html" . }}{{ end }}</div></section>{{ end }}
+  {{ else }}
+    {{ with .Params.finding }}<aside class="anna-reading-width anna-finding"><p class="anna-eyebrow">{{ .label }}</p><p class="anna-finding-title">{{ .title }}</p><p>{{ .text }}</p></aside>{{ end }}
+    <div class="anna-reading-width anna-prose anna-research-summary">{{ .Content }}</div>
+  {{ end }}
+  <div class="{{ if .Params.feature }}container{{ else }}anna-reading-width{{ end }} anna-project-end">
+    {{ with .Params.related_article }}{{ with site.GetPage . }}<p>Im Blog dazu</p><a class="anna-inline-link" href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">↗</span></a>{{ end }}{{ end }}
+    {{ with .Params.source }}<p class="anna-source-note">{{ . }}</p>{{ end }}
+  </div>
+</article>
+{{ end }}

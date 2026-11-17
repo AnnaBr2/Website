@@ -1,0 +1,15 @@
+<header class="header anna-header{{ if .IsHome }} anna-header-home{{ else }} anna-header-inner{{ end }}">
+  <nav class="navbar container" aria-label="Hauptnavigation">
+    {{ if .IsHome }}<span class="anna-brand-destination" aria-hidden="true"></span>{{ else }}<a class="navbar-brand anna-brand" href="{{ site.Home.RelPermalink }}">Anna Brabec<span>.</span></a>{{ end }}
+    <div class="anna-navigation">{{ partial "nav-links.html" . }}</div>
+    <details class="anna-mobile-menu"><summary>Menü <span aria-hidden="true">☰</span></summary><div class="anna-mobile-links">{{ partial "nav-links.html" . }}</div></details>
+  </nav>
+</header>
+<script>
+  document.querySelector('.anna-mobile-menu').addEventListener('click', function (event) {
+    if (event.target.closest('a')) this.open = false;
+  });
+  document.querySelector('.anna-mobile-menu').addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') { this.open = false; this.querySelector('summary').focus(); }
+  });
+</script>

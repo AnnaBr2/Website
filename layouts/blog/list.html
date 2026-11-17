@@ -1,0 +1,6 @@
+{{ define "main" }}
+<section class="anna-list-page anna-section"><div class="container">
+  <h1>{{ .Title }}</h1><p class="anna-page-lead">{{ .Description }}</p>
+  <div class="anna-article-list">{{ range .RegularPages.ByDate.Reverse }}{{ partial "article-card.html" . }}{{ else }}<p class="anna-empty">Die ersten Beiträge erscheinen hier in Kürze.</p>{{ end }}</div>
+</div></section>
+{{ end }}

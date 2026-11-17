@@ -1,0 +1,6 @@
+{{ define "main" }}
+<section class="anna-list-page anna-section"><div class="container">
+  <h1>{{ .Title }}</h1><p class="anna-page-lead">{{ .Description }}</p>
+  <div class="anna-project-grid">{{ range .RegularPages.ByWeight }}{{ partial "project-card.html" . }}{{ else }}<p class="anna-empty">Meine Projekte folgen hier.</p>{{ end }}</div>
+</div></section>
+{{ end }}

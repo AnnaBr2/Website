@@ -1,0 +1,18 @@
+{
+  "name": "anna-brabec-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "css": "node scripts/copy-fonts.mjs && tailwindcss -i ./assets/css/main.css -o ./assets/css/compiled.css --minify",
+    "css:watch": "tailwindcss -i ./assets/css/main.css -o ./assets/css/compiled.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.2.1",
+    "@tailwindcss/forms": "0.5.11",
+    "@tailwindcss/typography": "0.5.19",
+    "tailwind-bootstrap-grid": "7.0.0",
+    "tailwindcss": "4.2.1",
+    "@fontsource/josefin-sans": "5.2.8",
+    "@fontsource/montserrat": "5.2.8"
+  }
+}
